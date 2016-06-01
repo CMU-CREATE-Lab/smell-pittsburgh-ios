@@ -29,6 +29,7 @@ class GlobalHandler {
     var appDelegate: AppDelegate
     var locationService: CLLocationService
     var httpRequestHandler: HttpRequestHandler
+    var settingsHandler: SettingsHandler
     var gpsLocation: Location?
     var firstView: FirstViewController?
     
@@ -36,9 +37,9 @@ class GlobalHandler {
     private init() {
         appDelegate = (UIApplication.sharedApplication().delegate! as! AppDelegate)
         locationService = CLLocationService()
-//        locationService.serviceEnabled = true
         locationService.startLocationService()
         httpRequestHandler = HttpRequestHandler()
+        settingsHandler = SettingsHandler()
     }
     
     

@@ -32,6 +32,7 @@
 		2771B4181CD2DDAD001F1A46 /* HttpRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B4171CD2DDAD001F1A46 /* HttpRequestHandler.swift */; };
 		2771B41A1CD2DEB3001F1A46 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B4191CD2DEB3001F1A46 /* HttpHelper.swift */; };
 		2771B41C1CD2DECF001F1A46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B41B1CD2DECF001F1A46 /* Constants.swift */; };
+		27F6CF661CFF53900027981C /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CF651CFF53900027981C /* SettingsHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		2771B4171CD2DDAD001F1A46 /* HttpRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestHandler.swift; sourceTree = "<group>"; };
 		2771B4191CD2DEB3001F1A46 /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
 		2771B41B1CD2DECF001F1A46 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27F6CF651CFF53900027981C /* SettingsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				2771B4171CD2DDAD001F1A46 /* HttpRequestHandler.swift */,
 				2771B4191CD2DEB3001F1A46 /* HttpHelper.swift */,
 				2771B41B1CD2DECF001F1A46 /* Constants.swift */,
+				27F6CF651CFF53900027981C /* SettingsHandler.swift */,
 			);
 			name = application;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				2771B41C1CD2DECF001F1A46 /* Constants.swift in Sources */,
 				2771B40F1CD2BEDB001F1A46 /* Location.swift in Sources */,
 				2771B3DD1CD250E2001F1A46 /* FirstViewController.swift in Sources */,
+				27F6CF661CFF53900027981C /* SettingsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

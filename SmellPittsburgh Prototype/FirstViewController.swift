@@ -23,7 +23,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         // create request
         let request = HttpHelper.generateRequest(Constants.API_URL + "/api/v1/smell_reports", httpMethod: "POST")
         let params:[String: String] = [
-            "user_hash": Constants.USER_HASH,
+            "user_hash": GlobalHandler.sharedInstance.settingsHandler.userHash,
             "latitude" : latitude.description,
             "longitude" : longitude.description,
             "smell_value" : value.description,
