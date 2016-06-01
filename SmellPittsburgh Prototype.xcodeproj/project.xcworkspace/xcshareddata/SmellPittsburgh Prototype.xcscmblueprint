@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "53A1C8669C14FBD64BE96B85376693C823ACCA7D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A3A08279786D29A126F06C0C77B46F9165467266" : 0,
+    "53A1C8669C14FBD64BE96B85376693C823ACCA7D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2E882FCC-ADBD-436A-87C2-0B3740598CDD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A3A08279786D29A126F06C0C77B46F9165467266" : "SmellPittsburgh%20Prototype\/SwiftSSL\/",
+    "53A1C8669C14FBD64BE96B85376693C823ACCA7D" : "SmellPittsburgh%20Prototype\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SmellPittsburgh Prototype",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SmellPittsburgh Prototype.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CMU-CREATE-Lab\/smell-pittsburgh-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "53A1C8669C14FBD64BE96B85376693C823ACCA7D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SwiftP2P\/SwiftSSL.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A3A08279786D29A126F06C0C77B46F9165467266"
+    }
+  ]
+}

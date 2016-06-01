@@ -32,6 +32,7 @@
 		2771B4181CD2DDAD001F1A46 /* HttpRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B4171CD2DDAD001F1A46 /* HttpRequestHandler.swift */; };
 		2771B41A1CD2DEB3001F1A46 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B4191CD2DEB3001F1A46 /* HttpHelper.swift */; };
 		2771B41C1CD2DECF001F1A46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B41B1CD2DECF001F1A46 /* Constants.swift */; };
+		27876BA51CFF6F9B009A6045 /* SwiftSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */; };
 		27F6CF661CFF53900027981C /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CF651CFF53900027981C /* SettingsHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2771B3D61CD250E2001F1A46;
 			remoteInfo = "SmellPittsburgh Prototype";
+		};
+		27876BA11CFF6DA5009A6045 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27876B9C1CFF6DA5009A6045 /* SwiftSSL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 766211CE19E20AF900337784;
+			remoteInfo = SwiftSSL;
+		};
+		27876BA31CFF6DA5009A6045 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27876B9C1CFF6DA5009A6045 /* SwiftSSL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 766211D919E20AFA00337784;
+			remoteInfo = SwiftSSLTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -84,6 +99,7 @@
 		2771B4171CD2DDAD001F1A46 /* HttpRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestHandler.swift; sourceTree = "<group>"; };
 		2771B4191CD2DEB3001F1A46 /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
 		2771B41B1CD2DECF001F1A46 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27876B9C1CFF6DA5009A6045 /* SwiftSSL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSSL.xcodeproj; path = SwiftSSL/SwiftSSL.xcodeproj; sourceTree = "<group>"; };
 		27F6CF651CFF53900027981C /* SettingsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27876BA51CFF6F9B009A6045 /* SwiftSSL.framework in Frameworks */,
 				2771B4161CD2D87B001F1A46 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,8 +150,8 @@
 		2771B3CE1CD250E2001F1A46 = {
 			isa = PBXGroup;
 			children = (
+				27876B9B1CFF6D64009A6045 /* External */,
 				271215CC1CDCF41900C2D87A /* Assets */,
-				2771B4151CD2D87B001F1A46 /* CoreLocation.framework */,
 				2771B3D91CD250E2001F1A46 /* SmellPittsburgh Prototype */,
 				2771B3F01CD250E2001F1A46 /* SmellPittsburgh PrototypeTests */,
 				2771B3FB1CD250E2001F1A46 /* SmellPittsburgh PrototypeUITests */,
@@ -213,6 +230,24 @@
 				2771B40C1CD2BEB8001F1A46 /* CLLocationService.swift */,
 			);
 			name = locationservices;
+			sourceTree = "<group>";
+		};
+		27876B9B1CFF6D64009A6045 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				27876B9C1CFF6DA5009A6045 /* SwiftSSL.xcodeproj */,
+				2771B4151CD2D87B001F1A46 /* CoreLocation.framework */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		27876B9D1CFF6DA5009A6045 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */,
+				27876BA41CFF6DA5009A6045 /* SwiftSSLTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +341,12 @@
 			mainGroup = 2771B3CE1CD250E2001F1A46;
 			productRefGroup = 2771B3D81CD250E2001F1A46 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 27876B9D1CFF6DA5009A6045 /* Products */;
+					ProjectRef = 27876B9C1CFF6DA5009A6045 /* SwiftSSL.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2771B3D61CD250E2001F1A46 /* SmellPittsburgh Prototype */,
@@ -314,6 +355,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftSSL.framework;
+			remoteRef = 27876BA11CFF6DA5009A6045 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		27876BA41CFF6DA5009A6045 /* SwiftSSLTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftSSLTests.xctest;
+			remoteRef = 27876BA31CFF6DA5009A6045 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2771B3D51CD250E2001F1A46 /* Resources */ = {
@@ -518,6 +576,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.cmucreatelab.smellpittsburgh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_INCLUDE_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -533,6 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.cmucreatelab.smellpittsburgh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_INCLUDE_PATHS = "";
 			};
 			name = Release;
 		};
