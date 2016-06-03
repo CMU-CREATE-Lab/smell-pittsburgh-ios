@@ -65,7 +65,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         smellDescriptionTextField.delegate = self
         symptomsTextField.delegate = self
         GlobalHandler.sharedInstance.firstView = self
-        smellValueSegmentedControl.addTarget(self, action: #selector(segmentedControlDidChange), forControlEvents: UIControlEvents.ValueChanged)
+//        smellValueSegmentedControl.addTarget(self, action: #selector(segmentedControlDidChange), forControlEvents: UIControlEvents.ValueChanged)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -76,7 +76,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         // clear values
         smellValueSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
-        smellValueSegmentedControl.tintColor = nil
+//        smellValueSegmentedControl.tintColor = nil
         smellDescriptionTextField.text = ""
         symptomsTextField.text = ""
         // request location upon requesting the view
