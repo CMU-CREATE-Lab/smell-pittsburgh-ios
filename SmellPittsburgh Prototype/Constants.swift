@@ -11,11 +11,11 @@ import UIKit
 
 class Constants {
     
+    static let APP_VERSION_NUMBER = "1.3"
+    
     static let API_URL = "http://localhost"
     
     static let MAP_URL = "http://localhost/visualization"
-    
-    static let USER_HASH = "iosdemo"
     
     static let SMELL_COLORS = [
         UIColor(red: 0, green: 255.0/255.0, blue: 0, alpha: 1),
