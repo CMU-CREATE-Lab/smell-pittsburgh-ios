@@ -19,6 +19,8 @@ class SettingsHandler {
     var userDefaults: NSUserDefaults
     var appDelegate: AppDelegate
     var userHash: String
+    // TODO testing only; delete me later
+    var myPoints = [String]()
     
     
     private static func generateUserHash() -> String {
@@ -31,6 +33,13 @@ class SettingsHandler {
     }
     
     
+    // TODO testing only; delete me later
+    func addPoint(point: String) {
+        myPoints.append(point)
+        userDefaults.setValue(myPoints, forKey: "my_points")
+    }
+    
+    
     init() {
         appDelegate = (UIApplication.sharedApplication().delegate! as? AppDelegate)!
         userDefaults = NSUserDefaults.standardUserDefaults()
@@ -38,8 +47,12 @@ class SettingsHandler {
             userHash = hash
         } else {
             userHash = SettingsHandler.generateUserHash()
-            userDefaults.setValue(userHash, forKey: SettingsKeys.userHash)
+            userDefaults.setValue(userHash, forKey: "my_points")
         }
+        // TODO testing only; delete me later
+        let lastPoints = userDefaults.valueForKey("my_points") as? [String]
+        NSLog("lastPoints were \(lastPoints); now clearing")
+        userDefaults.setValue(myPoints, forKey: "my_points")
     }
     
 }

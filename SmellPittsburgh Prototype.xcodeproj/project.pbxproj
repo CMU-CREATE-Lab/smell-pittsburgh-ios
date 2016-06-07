@@ -17,6 +17,8 @@
 		271215DE1CDCF44500C2D87A /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 271215D41CDCF44500C2D87A /* Icon-152.png */; };
 		271215DF1CDCF44500C2D87A /* Icon-167.png in Resources */ = {isa = PBXBuildFile; fileRef = 271215D51CDCF44500C2D87A /* Icon-167.png */; };
 		271215E01CDCF44500C2D87A /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 271215D61CDCF44500C2D87A /* Icon-180.png */; };
+		27687F891D06FE9B00630DB5 /* SwiftSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */; };
+		27687F8A1D06FE9B00630DB5 /* SwiftSSL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2771B3DB1CD250E2001F1A46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B3DA1CD250E2001F1A46 /* AppDelegate.swift */; };
 		2771B3DD1CD250E2001F1A46 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B3DC1CD250E2001F1A46 /* FirstViewController.swift */; };
 		2771B3DF1CD250E2001F1A46 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B3DE1CD250E2001F1A46 /* SecondViewController.swift */; };
@@ -32,11 +34,17 @@
 		2771B4181CD2DDAD001F1A46 /* HttpRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B4171CD2DDAD001F1A46 /* HttpRequestHandler.swift */; };
 		2771B41A1CD2DEB3001F1A46 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B4191CD2DEB3001F1A46 /* HttpHelper.swift */; };
 		2771B41C1CD2DECF001F1A46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B41B1CD2DECF001F1A46 /* Constants.swift */; };
-		27876BA51CFF6F9B009A6045 /* SwiftSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */; };
 		27F6CF661CFF53900027981C /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6CF651CFF53900027981C /* SettingsHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		27687F8B1D06FE9B00630DB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27876B9C1CFF6DA5009A6045 /* SwiftSSL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 766211CD19E20AF900337784;
+			remoteInfo = SwiftSSL;
+		};
 		2771B3EE1CD250E2001F1A46 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2771B3CF1CD250E2001F1A46 /* Project object */;
@@ -66,6 +74,20 @@
 			remoteInfo = SwiftSSLTests;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		27687F8D1D06FE9B00630DB5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				27687F8A1D06FE9B00630DB5 /* SwiftSSL.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		271215CD1CDCF44500C2D87A /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
@@ -108,8 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27876BA51CFF6F9B009A6045 /* SwiftSSL.framework in Frameworks */,
 				2771B4161CD2D87B001F1A46 /* CoreLocation.framework in Frameworks */,
+				27687F891D06FE9B00630DB5 /* SwiftSSL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +282,12 @@
 				2771B3D31CD250E2001F1A46 /* Sources */,
 				2771B3D41CD250E2001F1A46 /* Frameworks */,
 				2771B3D51CD250E2001F1A46 /* Resources */,
+				27687F8D1D06FE9B00630DB5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				27687F8C1D06FE9B00630DB5 /* PBXTargetDependency */,
 			);
 			name = "SmellPittsburgh Prototype";
 			productName = "SmellPittsburgh Prototype";
@@ -447,6 +471,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		27687F8C1D06FE9B00630DB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftSSL;
+			targetProxy = 27687F8B1D06FE9B00630DB5 /* PBXContainerItemProxy */;
+		};
 		2771B3EF1CD250E2001F1A46 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2771B3D61CD250E2001F1A46 /* SmellPittsburgh Prototype */;
@@ -570,8 +599,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "SmellPittsburgh Prototype/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cmucreatelab.smellpittsburgh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -586,8 +617,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "SmellPittsburgh Prototype/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cmucreatelab.smellpittsburgh;
 				PRODUCT_NAME = "$(TARGET_NAME)";

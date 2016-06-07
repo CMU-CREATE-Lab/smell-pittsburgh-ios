@@ -28,8 +28,11 @@ class CLLocationService: NSObject, CLLocationManagerDelegate {
     
     func startLocationService() {
         if (serviceEnabled) {
-            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-            locationManager.distanceFilter = 1000
+//            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+//            locationManager.distanceFilter = 1000
+            // improved location services
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
         }
     }
@@ -63,7 +66,11 @@ class CLLocationService: NSObject, CLLocationManagerDelegate {
         geocoder.reverseGeocodeLocation(location!, completionHandler: { (results: [CLPlacemark]?, error: NSError?) -> Void in
             if error == nil && results!.count > 0 {
                 let placemark = results![results!.endIndex-1]
-                self.updateCurrentLocation(Location(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude), name: placemark.locality!)
+                NSLog("READING A NEW LOCATION: lat,long=\(location!.coordinate.latitude) \(location!.coordinate.longitude);  Haccuracy=\(location!.horizontalAccuracy), Vaccuracy=\(location!.verticalAccuracy), altitude=\(location!.altitude)")
+                let time = Int(NSDate().timeIntervalSince1970)
+                let location = Location(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+                GlobalHandler.sharedInstance.settingsHandler.addPoint("\(time) \(location.latitude) \(location.longitude)")
+                self.updateCurrentLocation(location, name: placemark.locality!)
             }
         })
         // TODO should we stop updating location once we find one?
