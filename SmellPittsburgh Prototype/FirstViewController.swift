@@ -84,6 +84,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             latitude = currentLocation.latitude
             longitude = currentLocation.longitude
         }
+        locationNeedsUpdated = true
+        GlobalHandler.sharedInstance.locationService.startLocationService()
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        GlobalHandler.sharedInstance.locationService.stopLocationService()
     }
     
 

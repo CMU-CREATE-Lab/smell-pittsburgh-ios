@@ -37,7 +37,7 @@ class GlobalHandler {
     private init() {
         appDelegate = (UIApplication.sharedApplication().delegate! as! AppDelegate)
         locationService = CLLocationService()
-        locationService.startLocationService()
+//        locationService.startLocationService()
         httpRequestHandler = HttpRequestHandler()
         settingsHandler = SettingsHandler()
     }
