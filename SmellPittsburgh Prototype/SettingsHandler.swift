@@ -26,8 +26,8 @@ class SettingsHandler {
     private static func generateUserHash() -> String {
         // INPUT: Random Number + Epoch Time
         let input = String.init(format: "%d %d", arc4random(), Int(NSDate().timeIntervalSince1970))
-        // Digest input string with SHA-224
-        let result = "ios_" + input.digest(SwiftSSL.DigestAlgorithm.SHA224)
+        // Digest input string with MD5
+        let result = "ios_" + input.digest(SwiftSSL.DigestAlgorithm.MD5)
         NSLog("Returning genreated user_hash=\(result)")
         return result
     }
