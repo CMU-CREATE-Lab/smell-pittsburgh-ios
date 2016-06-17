@@ -47,7 +47,7 @@ class SettingsHandler {
             userHash = hash
         } else {
             userHash = SettingsHandler.generateUserHash()
-            userDefaults.setValue(userHash, forKey: "my_points")
+            userDefaults.setValue(userHash, forKey: SettingsKeys.userHash)
         }
         // TODO testing only; delete me later
         let lastPoints = userDefaults.valueForKey("my_points") as? [String]

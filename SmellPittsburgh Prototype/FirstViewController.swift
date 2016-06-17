@@ -14,12 +14,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var symptomsTextField: UITextField!
     @IBOutlet weak var smellValueSegmentedControl: UISegmentedControl!
     @IBOutlet weak var viewTextFields: UIView!
-    var latitude: Double?
-    var longitude: Double?
+//    var latitude: Double?
+//    var longitude: Double?
+    var location: Location?
     var locationNeedsUpdated = true
     
     
-    private func sendPost(value: Int, description: String, feelingsSymptoms: String, latitude: Double, longitude: Double, responseHandler: (url: NSURL?, response: NSURLResponse?, error: NSError?) -> Void ) {
+    private func sendPost(value: Int, description: String, feelingsSymptoms: String, latitude: Double, longitude: Double, horizontalAccuracy: Double, verticalAccuracy: Double, responseHandler: (url: NSURL?, response: NSURLResponse?, error: NSError?) -> Void ) {
         // create request
         let request = HttpHelper.generateRequest(Constants.API_URL + "/api/v1/smell_reports", httpMethod: "POST")
         let params:[String: String] = [
@@ -28,7 +29,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             "longitude" : longitude.description,
             "smell_value" : value.description,
             "smell_description" : description,
-            "feelings_symptoms" : feelingsSymptoms
+            "feelings_symptoms" : feelingsSymptoms,
+            "horizontal_accuracy" : horizontalAccuracy.description,
+            "vertical_accuracy" : verticalAccuracy.description
         ]
         request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions())
         
@@ -49,8 +52,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     func updateLocation(location: Location) {
         if locationNeedsUpdated {
-            latitude = location.latitude
-            longitude = location.longitude
+            self.location = location
             locationNeedsUpdated = false
         }
     }
@@ -81,8 +83,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         symptomsTextField.text = ""
         // request location upon requesting the view
         if let currentLocation = GlobalHandler.sharedInstance.gpsLocation {
-            latitude = currentLocation.latitude
-            longitude = currentLocation.longitude
+//            latitude = currentLocation.latitude
+//            longitude = currentLocation.longitude
+            self.location = currentLocation
         }
         locationNeedsUpdated = true
         GlobalHandler.sharedInstance.locationService.startLocationService()
@@ -159,7 +162,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             NSLog("ERROR - no value selected for smell.")
             let dialog = UIAlertView.init(title: "Missing Value", message: "Please select a value for your reported smell (1-5).", delegate: nil, cancelButtonTitle: "OK")
             dialog.show()
-        } else if latitude == nil || longitude == nil {
+        } else if location?.latitude == nil || location?.longitude == nil {
             NSLog("ERROR - current location not available.")
             let dialog = UIAlertView.init(title: "Location Services", message: "Current location could not be discovered; please check settings.", delegate: nil, cancelButtonTitle: "OK")
             dialog.show()
@@ -167,8 +170,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             let value = smellValueSegmentedControl.selectedSegmentIndex + 1
             let description = smellDescriptionTextField.text!
             let feelingsSymptoms = symptomsTextField.text!
-            let latitude = self.latitude!
-            let longitude = self.longitude!
+            let latitude = self.location!.latitude
+            let longitude = self.location!.longitude
+            let horizontalAccuracy = self.location!.hacc
+            let verticalAccuracy = self.location!.vacc
             
             NSLog("Form to submit: smell_value=\(value), smell_description='\(description)', feelings_symptoms='\(feelingsSymptoms)', latitude=\(latitude), longitude=\(longitude)")
             
@@ -176,7 +181,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                 NSLog("Got HTTP response")
             }
             
-            sendPost(value, description: description, feelingsSymptoms: feelingsSymptoms, latitude: latitude, longitude: longitude, responseHandler: responseHandler)
+            sendPost(value, description: description, feelingsSymptoms: feelingsSymptoms, latitude: latitude, longitude: longitude, horizontalAccuracy: horizontalAccuracy, verticalAccuracy: verticalAccuracy, responseHandler: responseHandler)
             
             self.tabBarController?.selectedIndex = 1
         }

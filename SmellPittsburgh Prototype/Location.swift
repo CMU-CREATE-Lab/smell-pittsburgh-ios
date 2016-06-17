@@ -12,11 +12,15 @@ struct Location {
     
     var latitude = Double()
     var longitude = Double()
+    var hacc = Double()
+    var vacc = Double()
     
     
-    init(latitude:Double,longitude:Double) {
+    init(latitude:Double,longitude:Double,horizontalAccuracy:Double,verticalAccuracy:Double) {
         self.latitude = latitude
         self.longitude = longitude
+        self.hacc = horizontalAccuracy
+        self.vacc = verticalAccuracy
     }
     
 }

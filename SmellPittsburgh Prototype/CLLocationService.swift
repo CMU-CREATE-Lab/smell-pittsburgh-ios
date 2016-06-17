@@ -68,8 +68,8 @@ class CLLocationService: NSObject, CLLocationManagerDelegate {
                 let placemark = results![results!.endIndex-1]
                 NSLog("READING A NEW LOCATION: lat,long=\(location!.coordinate.latitude) \(location!.coordinate.longitude);  Haccuracy=\(location!.horizontalAccuracy), Vaccuracy=\(location!.verticalAccuracy), altitude=\(location!.altitude)")
                 let time = Int(NSDate().timeIntervalSince1970)
-                let location = Location(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
-                GlobalHandler.sharedInstance.settingsHandler.addPoint("\(time) \(location.latitude) \(location.longitude)")
+                let location = Location(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude, horizontalAccuracy: location!.horizontalAccuracy, verticalAccuracy: location!.verticalAccuracy)
+                GlobalHandler.sharedInstance.settingsHandler.addPoint("\(time) \(location.latitude) \(location.longitude) \(location.hacc) \(location.vacc)")
                 self.updateCurrentLocation(location, name: placemark.locality!)
             }
         })
