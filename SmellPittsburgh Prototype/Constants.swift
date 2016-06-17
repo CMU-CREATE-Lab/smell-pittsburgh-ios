@@ -11,7 +11,7 @@ import UIKit
 
 class Constants {
     
-    static let APP_VERSION_NUMBER = "1.4"
+    static let APP_VERSION_NUMBER = "1.5"
     
     static let API_URL = "http://localhost"
     
