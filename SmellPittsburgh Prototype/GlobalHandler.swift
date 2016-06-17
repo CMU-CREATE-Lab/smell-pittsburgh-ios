@@ -27,27 +27,17 @@ class GlobalHandler {
 
     
     var appDelegate: AppDelegate
-    var locationService: CLLocationService
+    var locationHandler: LocationHandler
     var httpRequestHandler: HttpRequestHandler
     var settingsHandler: SettingsHandler
-    var gpsLocation: Location?
     var firstView: FirstViewController?
     
     
     private init() {
         appDelegate = (UIApplication.sharedApplication().delegate! as! AppDelegate)
-        locationService = CLLocationService()
-//        locationService.startLocationService()
+        locationHandler = LocationHandler()
         httpRequestHandler = HttpRequestHandler()
         settingsHandler = SettingsHandler()
-    }
-    
-    
-    func updateGps(location: Location?) {
-        self.gpsLocation = location
-        if gpsLocation != nil && firstView != nil {
-            firstView!.updateLocation(gpsLocation!)
-        }
     }
     
 }

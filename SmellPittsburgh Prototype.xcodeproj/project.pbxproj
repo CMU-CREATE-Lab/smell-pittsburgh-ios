@@ -17,6 +17,7 @@
 		271215DE1CDCF44500C2D87A /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 271215D41CDCF44500C2D87A /* Icon-152.png */; };
 		271215DF1CDCF44500C2D87A /* Icon-167.png in Resources */ = {isa = PBXBuildFile; fileRef = 271215D51CDCF44500C2D87A /* Icon-167.png */; };
 		271215E01CDCF44500C2D87A /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 271215D61CDCF44500C2D87A /* Icon-180.png */; };
+		276766171D1450A500026A78 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276766161D1450A500026A78 /* LocationHandler.swift */; };
 		27687F891D06FE9B00630DB5 /* SwiftSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */; };
 		27687F8A1D06FE9B00630DB5 /* SwiftSSL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27876BA21CFF6DA5009A6045 /* SwiftSSL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2771B3DB1CD250E2001F1A46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B3DA1CD250E2001F1A46 /* AppDelegate.swift */; };
@@ -27,7 +28,6 @@
 		2771B3E71CD250E2001F1A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2771B3E51CD250E2001F1A46 /* LaunchScreen.storyboard */; };
 		2771B3F21CD250E2001F1A46 /* SmellPittsburgh_PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B3F11CD250E2001F1A46 /* SmellPittsburgh_PrototypeTests.swift */; };
 		2771B3FD1CD250E2001F1A46 /* SmellPittsburgh_PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B3FC1CD250E2001F1A46 /* SmellPittsburgh_PrototypeUITests.swift */; };
-		2771B40D1CD2BEB8001F1A46 /* CLLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B40C1CD2BEB8001F1A46 /* CLLocationService.swift */; };
 		2771B40F1CD2BEDB001F1A46 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B40E1CD2BEDB001F1A46 /* Location.swift */; };
 		2771B4111CD2BF8D001F1A46 /* GlobalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771B4101CD2BF8D001F1A46 /* GlobalHandler.swift */; };
 		2771B4161CD2D87B001F1A46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2771B4151CD2D87B001F1A46 /* CoreLocation.framework */; };
@@ -100,6 +100,7 @@
 		271215D41CDCF44500C2D87A /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152.png"; sourceTree = "<group>"; };
 		271215D51CDCF44500C2D87A /* Icon-167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-167.png"; sourceTree = "<group>"; };
 		271215D61CDCF44500C2D87A /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = "<group>"; };
+		276766161D1450A500026A78 /* LocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		2771B3D71CD250E2001F1A46 /* SmellPittsburgh Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmellPittsburgh Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2771B3DA1CD250E2001F1A46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2771B3DC1CD250E2001F1A46 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		2771B3F81CD250E2001F1A46 /* SmellPittsburgh PrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SmellPittsburgh PrototypeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2771B3FC1CD250E2001F1A46 /* SmellPittsburgh_PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmellPittsburgh_PrototypeUITests.swift; sourceTree = "<group>"; };
 		2771B3FE1CD250E2001F1A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2771B40C1CD2BEB8001F1A46 /* CLLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationService.swift; sourceTree = "<group>"; };
 		2771B40E1CD2BEDB001F1A46 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2771B4101CD2BF8D001F1A46 /* GlobalHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalHandler.swift; sourceTree = "<group>"; };
 		2771B4151CD2D87B001F1A46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -249,7 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				2771B40E1CD2BEDB001F1A46 /* Location.swift */,
-				2771B40C1CD2BEB8001F1A46 /* CLLocationService.swift */,
+				276766161D1450A500026A78 /* LocationHandler.swift */,
 			);
 			name = locationservices;
 			sourceTree = "<group>";
@@ -444,7 +444,7 @@
 				2771B41A1CD2DEB3001F1A46 /* HttpHelper.swift in Sources */,
 				2771B4181CD2DDAD001F1A46 /* HttpRequestHandler.swift in Sources */,
 				2771B4111CD2BF8D001F1A46 /* GlobalHandler.swift in Sources */,
-				2771B40D1CD2BEB8001F1A46 /* CLLocationService.swift in Sources */,
+				276766171D1450A500026A78 /* LocationHandler.swift in Sources */,
 				2771B41C1CD2DECF001F1A46 /* Constants.swift in Sources */,
 				2771B40F1CD2BEDB001F1A46 /* Location.swift in Sources */,
 				2771B3DD1CD250E2001F1A46 /* FirstViewController.swift in Sources */,

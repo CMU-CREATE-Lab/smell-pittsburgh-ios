@@ -14,10 +14,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var symptomsTextField: UITextField!
     @IBOutlet weak var smellValueSegmentedControl: UISegmentedControl!
     @IBOutlet weak var viewTextFields: UIView!
-//    var latitude: Double?
-//    var longitude: Double?
-    var location: Location?
-    var locationNeedsUpdated = true
     
     
     private func sendPost(value: Int, description: String, feelingsSymptoms: String, latitude: Double, longitude: Double, horizontalAccuracy: Double, verticalAccuracy: Double, responseHandler: (url: NSURL?, response: NSURLResponse?, error: NSError?) -> Void ) {
@@ -50,14 +46,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func updateLocation(location: Location) {
-        if locationNeedsUpdated {
-            self.location = location
-            locationNeedsUpdated = false
-        }
-    }
-    
-    
     // MARK: UIViewController
     
     
@@ -67,7 +55,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         smellDescriptionTextField.delegate = self
         symptomsTextField.delegate = self
         GlobalHandler.sharedInstance.firstView = self
-//        smellValueSegmentedControl.addTarget(self, action: #selector(segmentedControlDidChange), forControlEvents: UIControlEvents.ValueChanged)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -78,22 +65,14 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         // clear values
         smellValueSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
-//        smellValueSegmentedControl.tintColor = nil
         smellDescriptionTextField.text = ""
         symptomsTextField.text = ""
-        // request location upon requesting the view
-        if let currentLocation = GlobalHandler.sharedInstance.gpsLocation {
-//            latitude = currentLocation.latitude
-//            longitude = currentLocation.longitude
-            self.location = currentLocation
-        }
-        locationNeedsUpdated = true
-        GlobalHandler.sharedInstance.locationService.startLocationService()
+        GlobalHandler.sharedInstance.locationHandler.start()
     }
     
     
     override func viewWillDisappear(animated: Bool) {
-        GlobalHandler.sharedInstance.locationService.stopLocationService()
+        GlobalHandler.sharedInstance.locationHandler.stop()
     }
     
 
@@ -157,7 +136,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func sendSmellReport(sender: AnyObject) {
-        NSLog("Clicked Send Smell Report")
+        let location = GlobalHandler.sharedInstance.locationHandler.closestSampledLocation
+        
         if smellValueSegmentedControl.selectedSegmentIndex == UISegmentedControlNoSegment {
             NSLog("ERROR - no value selected for smell.")
             let dialog = UIAlertView.init(title: "Missing Value", message: "Please select a value for your reported smell (1-5).", delegate: nil, cancelButtonTitle: "OK")
@@ -170,10 +150,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             let value = smellValueSegmentedControl.selectedSegmentIndex + 1
             let description = smellDescriptionTextField.text!
             let feelingsSymptoms = symptomsTextField.text!
-            let latitude = self.location!.latitude
-            let longitude = self.location!.longitude
-            let horizontalAccuracy = self.location!.hacc
-            let verticalAccuracy = self.location!.vacc
+            let latitude = location!.latitude
+            let longitude = location!.longitude
+            let horizontalAccuracy = location!.hacc
+            let verticalAccuracy = location!.vacc
             
             NSLog("Form to submit: smell_value=\(value), smell_description='\(description)', feelings_symptoms='\(feelingsSymptoms)', latitude=\(latitude), longitude=\(longitude)")
             

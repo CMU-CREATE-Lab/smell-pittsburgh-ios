@@ -1,3 +1,4 @@
 [submodule "SwiftSSL"]
 	path = SwiftSSL
 	url = https://github.com/SwiftP2P/SwiftSSL.git
+	ignore = dirty

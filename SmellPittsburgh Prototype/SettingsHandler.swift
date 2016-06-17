@@ -33,11 +33,11 @@ class SettingsHandler {
     }
     
     
-    // TODO testing only; delete me later
-    func addPoint(point: String) {
-        myPoints.append(point)
-        userDefaults.setValue(myPoints, forKey: "my_points")
-    }
+//    // TODO testing only; delete me later
+//    func addPoint(point: String) {
+//        myPoints.append(point)
+//        userDefaults.setValue(myPoints, forKey: "my_points")
+//    }
     
     
     init() {
@@ -49,10 +49,10 @@ class SettingsHandler {
             userHash = SettingsHandler.generateUserHash()
             userDefaults.setValue(userHash, forKey: SettingsKeys.userHash)
         }
-        // TODO testing only; delete me later
-        let lastPoints = userDefaults.valueForKey("my_points") as? [String]
-        NSLog("lastPoints were \(lastPoints); now clearing")
-        userDefaults.setValue(myPoints, forKey: "my_points")
+//        // TODO testing only; delete me later
+//        let lastPoints = userDefaults.valueForKey("my_points") as? [String]
+//        NSLog("lastPoints were \(lastPoints); now clearing")
+//        userDefaults.setValue(myPoints, forKey: "my_points")
     }
     
 }
